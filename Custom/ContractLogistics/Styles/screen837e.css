@@ -1,0 +1,317 @@
+﻿/* ------------------------------------------------------
+TYPOGRAPHY
+@section typography
+--------------------------------------------------------- */
+/*
+@section Body
+*/
+
+/*
+@section paragraphs
+*/
+
+/*
+@section links
+*/
+
+a[href^="mailto:"] {
+color: #cd122c;
+}
+
+/*
+@section Headings
+*/
+
+/*
+@section Lists
+*/
+
+/*
+@section Other
+*/
+
+#loginIframe
+{
+    width: 440px;
+    height: 185px;
+}
+
+/*
+@section Notifications & Errors
+*/
+
+/* ------------------------------------------------------
+HELPER STYLES
+@section helper
+--------------------------------------------------------- */
+
+/*
+@section non-semantic helpers
+*/
+
+/*
+@section Forms
+*/
+
+.loginForm {
+	z-index: 10;
+	height: 500px;
+	position: absolute;
+}
+
+.loginForm input[type=text]
+{
+    position: absolute;
+	border: 1;
+	margin: 0;
+	line-height: 1.5em;
+	-moz-border-radius: 2px 2px 2px 2px;
+    border: 1px solid #D0D0D0;
+    padding: 5px;
+    width: 202px;
+}
+
+.loginForm input[type=password] 
+{
+    position: absolute;
+    top: 35px;
+	border: 1;
+	padding: 0;
+	margin: 0;
+	line-height: 1.5em;
+    -moz-border-radius: 2px 2px 2px 2px;
+    border: 1px solid #D0D0D0;
+    padding: 5px;
+    width: 202px;
+}
+
+.loginForm input[type=submit] 
+{
+    position: absolute;
+    top: 35px;
+    left: 224px;
+    width: 96px;
+}
+
+.loginForm .usernameLabel, .loginForm .passwordLabel
+{
+    position: absolute;
+	z-index:10;
+	top: 5px;
+	font-size: 12px;
+	color: #999;
+	width: 100px;
+	left: 5px;
+}
+
+.loginForm .passwordLabel
+{
+    top: 38px;
+}
+
+.loginForm input {
+  -moz-border-radius: 2px 2px 2px 2px;
+  border: 1px solid #D0D0D0;
+  padding: 5px;
+  width: 202px;
+}
+
+.formFix {
+    position: relative;
+    height: 90px;
+}
+
+ul.formData {
+    list-style: none outside none;
+}
+
+/*
+@section Notifications & Errors
+*/
+
+/* ------------------------------------------------------
+STRUCTURE
+@section structure
+--------------------------------------------------------- */
+
+[role=banner] {
+	background: none;
+	position: relative;
+}
+
+[role=navigation] a {
+	display: block ! important;
+}
+
+[role=contentinfo] li {height: 17px;}
+
+#page-home [role=main]{
+	padding: 0px ! important;
+	margin-bottom: 25px;
+	background: #FFF;
+}
+
+#content {
+	margin-right: 15px;
+}
+
+#sideNav li.navCMSListMenuHighlightedLI {
+	background: #fff url(../images/nav-on.png) no-repeat 100% .6em;
+}
+
+#sideNav a {
+	display: block;
+}
+
+#sideNav a:hover {
+	color: #cd122c;
+}
+
+#sideNav .navCMSListMenuLinkHighlighted {
+	padding-bottom: 10px;
+}
+
+/* ------------------------------------------------------
+COMPONENTS
+@section components
+--------------------------------------------------------- */
+body {
+    background: #FEFAEA url(../images/bg.gif) repeat-x;
+}
+
+#hero {
+    background: #eab000; /* old browsers */
+    background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, #DFA000),
+    color-stop(0.66, #F5C000)
+);
+background: -moz-linear-gradient(
+    center bottom,
+    #DFA000 0%,
+    #F5C000 66%
+);
+
+	
+	width: 944px;
+	overflow: hidden;
+}
+
+#hero img {
+	float: left;
+	width: 498px;
+	height: 243px;
+}
+
+#hero a 
+{
+    font-size: 14px;
+    color: #fff;
+    margin-top: 0px;
+}
+
+.newsList li img {float: right; display: block;}
+.newsList li {border-bottom: 1px solid #ccc;}
+
+.newsList h3 {margin: 25px 0 7px; color: #2a2a2a; font-size: 18px;}
+.newsList h3 a {color: #2a2a2a; font-size: 18px;}
+.newsList li div {padding-bottom: 20px;}
+.newsList .newsdate {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 22px;
+    display: block;
+}
+
+.searchResults > div > div a.main {
+	font-family: Tahoma, Arial, sans-serif;
+	font-weight:bold;
+	color: #d71635;
+	font-size: 16px;
+	text-decoration: none;
+	float:none;
+}
+
+#leftBottomContentDiv {
+    float: left;
+    width: 478px;
+    margin: 20px 0 0 20px;
+}
+
+#leftBottomContentDiv h1 
+{
+    font-weight: 600;
+    margin-bottom: 21px;
+}
+
+#leftBottomContentDiv p
+{
+    font-family: Tahoma, Arial, Sans-Serif;
+    font-size: 15px;
+    line-height: 23px;
+    color: #252525;
+}
+
+#rightBottomContentDiv {
+    width: 365px;
+    float: left;
+    padding: 0 20px;
+    margin: 20px 0 0 20px;
+    background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, #E0E0E0),
+    color-stop(0.7, #F8F7F7)
+);
+background: -moz-linear-gradient(
+    center bottom,
+    #E0E0E0 0%,
+    #F8F7F7 70%
+);
+
+-moz-border-radius: 0.3em 0.3em 0.3em 0.3em;
+}
+
+#rightBottomContentDiv h1 {color: #F5C000; border-bottom: 1px solid #d7d7d7; padding-bottom: 10px; font-weight: 600;}
+
+
+#caseStudySummary div.caseStudyLogo 
+{
+    width: 150px;
+    float: left;
+}
+
+#caseStudySummary div.caseStudyIntro 
+{
+    padding: 0px 10px; 
+    width: 250px;
+    float: left;  
+}
+
+#caseStudySummary div.caseStudyImg 
+{
+    width: 150px;
+    float: left;
+}
+
+/* ------------------------------------------------------
+OVERRIDES
+@section overrides
+--------------------------------------------------------- */
+
+#lnkContractlogistics.current {background-position: -352px -22px;}
+
+/* ------------------------------------------------------
+PRINT
+@section print
+--------------------------------------------------------- */
+/* 
+inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/ 
+*/
+@media print {	
+    #hero p a {color: #fff; padding-left: 15px; !important }
+}
+

@@ -1,0 +1,1184 @@
+﻿/* ------------------------------------------------------
+Default style document
+
+@project	
+@version	1.0
+@date	2010-10-26
+@author	Darren Wood <darren.w@dontcom.com>
+@media	screen, print
+
+@colordef #c00; red for headers
+@colordef #3c3934; grey
+
+File contains the following:
+- Global Reset
+- Typography
+	- Body
+	- Paragraphs
+	- Links
+	- Headings
+	- Lists
+	- Others
+- Helper Styles
+	- Forms
+	- Notifications and error messages
+- Structure
+- Components
+- Overrides
+- Mobile Styles
+--------------------------------------------------------- */
+
+/* ------------------------------------------------------
+RESET
+@section reset
+--------------------------------------------------------- */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, hr, td,
+article, aside, figure, footer, header, 
+hgroup, menu, nav, section, menu,
+time, mark, audio, video {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+	text-rendering: optimizeLegibility;
+}    
+
+input[type=textarea] {
+	margin-bottom: 20px;
+}
+
+
+article, aside, figure, footer, header, 
+hgroup, nav, section { display:block; }
+
+nav ul { list-style:none; }
+
+blockquote, q { quotes:none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content:''; content:none; }
+
+a { margin:0; padding:0; border:0; font-size:100%; vertical-align:baseline; background:transparent; }
+
+ins { background-color:#ff9; color:#000; text-decoration:none; }
+
+mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom:1px dotted #000; cursor:help; }
+
+/* tables still need cellspacing="0" in the markup */
+table { border-collapse:collapse; border-spacing:0;border: 1px solid #FFF; }
+
+hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
+
+input, select { vertical-align:middle; }
+
+
+/* ------------------------------------------------------
+TYPOGRAPHY
+@section typography
+--------------------------------------------------------- */
+/*
+@section Body
+*/
+body {
+	text-rendering: optimizeLegibility;
+	font: normal 14px/1.42 Arial, sans-serif; 
+	color: #555;
+	background: #fefaea;
+}
+
+
+/*
+@section paragraphs
+*/
+p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset {
+    margin-bottom: .5em;
+}
+
+
+/*
+@section links
+*/
+a:active { outline: none; }
+a:focus { outline: thin dotted; }
+
+a, a:active, a:visited { color:#069; text-decoration: none; }
+a:hover { color:#036; text-decoration: underline; }
+
+a:link { -webkit-tap-highlight-color: #FF5E99; } 
+
+
+/*
+@section Headings
+*/
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+	font-family: Tahoma, Arial, sans-serif;
+	font-weight: normal;
+	color: #d71635;
+	margin-top: 1em;
+}
+
+h1 { font-size: 24px; margin-top: 0; }
+h2 { font-size: 20px; }
+h3 { font-size: 18px; color: #333; margin-top: .5em;}
+h4 { font-size: 16px; color: #333; margin-top: .5em; }
+
+
+/*
+@section Lists
+*/
+ol { list-style: decimal; }
+ul { list-style: disc; }
+li { margin-left: 30px; }
+
+/*
+@section Forms
+*/
+
+/*
+@section Other
+*/
+small { font-size:85%; }
+strong, th { font-weight: bold; }
+
+td, td img { vertical-align:top; } 
+
+sub { vertical-align: sub; font-size: smaller; }
+sup { vertical-align: super; font-size: smaller; }
+
+pre { 
+  padding: 15px; 
+  white-space: pre; /* CSS2 */
+  white-space: pre-wrap; /* CSS 2.1 */
+  white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word; /* IE */
+}
+
+::-moz-selection{ background: #d71635; color:#ffe278; text-shadow: none; }
+::selection { background:#d71635; color:#ffffff; text-shadow: none; } 
+
+/*
+@section Notifications & Errors
+*/
+
+/* ------------------------------------------------------
+HELPER STYLES
+@section helper
+--------------------------------------------------------- */
+/*
+@section non-semantic helpers
+*/
+/* for image replacement */
+.ir { display:block; text-indent:-999px; overflow:hidden; background-repeat: none; }
+
+/* Hide for both screenreaders and browsers */
+.hidden { display:none; visibility:hidden; } 
+
+/* Hide only visually, but have it available for screenreaders */
+.visuallyhidden { position:absolute !important;    
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* >> The Magnificent CLEARFIX << */
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; } /* Hides from IE-mac \*/
+.clearfix { display: block; }
+
+.pdf {
+    color: #cd122c;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 0 0 6px 25px;
+    background: #fff url(../images/file-pdf.png) no-repeat; 
+}
+
+/*
+@section Forms
+*/
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+.ie6 input { vertical-align: text-bottom; }
+label, input[type=button], input[type=submit], button { cursor: pointer; }
+
+input[type="submit"] {
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #56524F;
+  background-image: -moz-linear-gradient(center top , #56524F, #22211D);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #22211D), color-stop(0.66, #56524F));
+  border: 0 none;
+  color: #FFFFFF !important;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 7px 9px;
+  text-shadow: 1px 1px 2px #000000;
+  text-transform: uppercase;
+  width: auto;
+}
+
+.searchBox {
+	position: absolute;
+	z-index: 10;
+	bottom: 20px;
+	right: 0;
+	background: url(../images/search.png) no-repeat;
+	width: 257px;
+	height: 27px;
+}
+
+.searchBox input[type=text] {
+	position: absolute;
+	top: 2px;
+	left: 13px;
+	width: 210px;
+	height: 24px;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	line-height: 1.5em;
+}
+
+.searchBox input[type=submit] {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 30px;
+	height: 24px;
+	border: 0;
+	overflow: hidden;
+	text-indent: -999em;
+	color: #a2a2a2;
+	font-size: 1px;
+	background: url(../images/search.png) no-repeat top right;
+}
+
+.searchBox label {
+	position: absolute;
+	z-index:10;
+	font-size: 12px;
+	color: #999;
+	top: 5px;
+	left: 13px;
+}
+
+/*
+@section Notifications & Errors
+*/
+
+/* ------------------------------------------------------
+STRUCTURE
+@section structure
+--------------------------------------------------------- */
+[role=banner] {
+	background: #FFCA08; /* old browsers */
+	background: -moz-linear-gradient(top, #FFCA08 0%, #FFCA08 58%, #EBA806 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFCA08), color-stop(58%,#FFCA08), color-stop(100%,#EBA806)); /* webkit */
+	position: relative;
+}
+
+[role=banner] .wrap {
+	height: 128px;
+	background: url(../images/bg-header.png) no-repeat 100% 0;
+	position: relative;
+}
+
+[role=banner] .wrap a {
+	display: block;
+	margin-top: 38px;
+	width: 300px;
+}
+
+[role=navigation] {
+	/*background: #070707;
+	background: -moz-linear-gradient(top, #585751 0%, #070707 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#585751), color-stop(100%,#070707));*/
+	border-bottom: 5px solid #cecece;
+}
+
+[role=navigation] a,
+[role=navigation] a:visited {
+	padding: 6px 20px;
+	font-size: 13px;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+}
+
+[role=navigation] li 
+{     
+	float: left;
+	display: block;
+	margin: 0;
+	padding: 0;
+	border-left: 1px solid #000;
+	border-right: 1px solid #878787;
+}
+
+[role=navigation] .navCMSListMenuLinkHighlighted, [role=navigation] .CMSListMenuHighlightedLI {
+	background: #E7E7E7; /* old browsers */
+	color: #000 !important;
+}
+
+[role=navigation] .navCMSListMenuLinkHighlighted a,
+[role=navigation] .navCMSListMenuLinkHighlighted a:hover,
+[role=navigation] .CMSListMenuHighlightedLI a,
+[role=navigation] .CMSListMenuHighlightedLI a:hover {
+	/*background: -moz-linear-gradient(top, #E7E7E7 0%, #CECECE 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#E7E7E7), color-stop(100%,#CECECE));*/
+	color: #000 !important;	
+	background: url(../images/topnavbg.gif) repeat-x 0 -35px;
+	text-shadow: none;
+}
+
+[role=navigation] li a:hover {
+	/*background: #8b8b8a;
+	background: -moz-linear-gradient(top, #8b8b8a 0%, #575650 100%); 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8b8b8a), color-stop(100%,#575650));*/
+	background: url(../images/topnavbg.gif) repeat-x 0 0;
+}
+
+[role=navigation] ul,
+[role=main],
+[role=contentinfo] div,
+.wrap {
+	overflow: hidden;
+	width: 944px;
+	margin: 0 auto;
+}
+
+/* second-level lists */
+[role=navigation] li ul { 
+	position: absolute;
+	background: black;
+	width: 15em;
+    display:block; 
+    z-index: 999;
+	left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+}
+
+/* second-level list items */
+[role=navigation] li ul li { 
+	width: 15em;	
+}
+
+/* second-level links */
+[role=navigation] .CMSListMenuHighlightedLI ul a,
+[role=navigation] li ul a { 
+	color: #fff ! important;
+	background: #000 ! important;
+}
+
+/* second-level links hover */
+[role=navigation] .CMSListMenuHighlightedLI ul a:hover,
+[role=navigation] li ul a:hover { 
+    color: #fff ! important;
+	background: #d71635 ! important;
+}
+
+[role=navigation] li ul li {border: 0;}
+
+/* lists nested under hovered list items */
+[role=navigation] li:hover ul, [role=navigation] li.sfhover ul { 
+	left: auto;
+	display:block; 
+}
+
+[role=main]{
+	background: #fff;
+	padding: 25px 0;
+}
+
+#content {
+	float: right;
+	display: inline;
+	width: 870px;
+}
+
+section.narrow {
+	float: right;
+	display: inline;
+	margin-right: 53px;
+	width: 680px !important;
+}
+
+#sideNav {
+	float: left;
+	display: inline;
+	width: 203px;
+	background: #D9D9D9; /* old browsers */
+	background: -moz-linear-gradient(left, #D9D9D9 0%, #D9D9D9 66%, #FFFFFF 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#D9D9D9), color-stop(66%,#D9D9D9), color-stop(100%,#FFFFFF)); /* webkit */
+}
+
+#sideNav ul {
+	margin-bottom: 0;
+}
+
+#sideNav li {
+	margin: 0;
+	padding: 5px 0 5px 20px;
+	background: #fff;
+	margin-bottom: 1px;
+	float: left;
+	width: 183px;
+}
+
+*html #sideNav {
+    background: #FFF;
+}
+
+*html #sideNav li {
+    border-bottom: 1px solid #D9D9D9;
+}
+
+*html #sideNav li ul li {
+    border-bottom: none;
+}
+
+#sideNav a {
+	color: #848383;
+	font-size: 13px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#sideNav li li a {padding-bottom: 8px; border-bottom: 1px solid #d7d7d7; margin-right: 28px; font-weight: normal;}
+#sideNav li li:last-child a {border-bottom: 0;}
+#sideNav li li {padding: 5px 0 5px 10px;}
+#sideNav li ul li.navCMSListMenuLinkHighlighted {font-weight: bold; color: #333;}
+
+#sideNav .navCMSListMenuLinkHighlighted {
+	color: #333;
+	font: bold 14px Tahoma, sans-serif;
+}
+
+#footerwrapper {
+    background: #e4e1d2;
+	border-top: 1px solid #cecbcb;
+	height: 103px;
+	width: 100%;
+}
+
+[role=contentinfo] {
+	clear: both;
+	/*overflow: hidden;*/
+	width: 944px;
+	padding: 40px 0;
+	background: #e4e1d2;
+	/* border-top: 1px solid #cecbcb; --SM*/
+    border-top: 0px; /* --SM */
+	height: 23px;
+	margin: 0 auto;
+}
+
+[role=contentinfo] ul {
+	float: left;
+}
+
+[role=contentinfo] .copyright {
+	float: left;
+	font-size: 10px;
+	color: #a39f90;
+	border-right: 0;
+	text-transform: uppercase;
+	padding-top: 3px;
+}
+
+[role=contentinfo] ul,
+[role=contentinfo] li {
+	margin: 0;
+	list-style-type: none;
+}
+
+ul.footer-logos {
+    float: right;
+}
+
+[role=contentinfo] li {
+	float: left;
+	display: inline;
+	padding: 0 10px 0;
+	border-right: 1px solid #c8c3af;
+	line-height: 1;
+}
+
+[role=contentinfo] a {
+	color: #a39f90;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 10px;
+	text-decoration: none;
+}
+
+[role=contentinfo] li.logos {
+    float: right;
+    padding: 0px;
+    margin: 0px 0px 0px 30px;
+    border-right: 0;
+}
+
+[role=contentinfo] li.pace
+{
+    width: 56px;
+}
+
+[role=contentinfo] li.courierpost
+{
+    width: 102px;
+}
+
+[role=contentinfo] li.roadstar
+{
+    width: 91px;
+}
+
+[role=contentinfo] li.contractlogistics
+{
+    width: 144px; 
+}
+
+
+/* ------------------------------------------------------
+COMPONENTS
+@section components
+--------------------------------------------------------- */
+
+#hero h1,
+#hero h2, 
+#hero p {
+	color: #fff;
+	font-weight: bold;
+	-moz-text-shadow: 1px 1px 1px #735700;
+	-webkit-text-shadow: 1px 1px 1px #735700;
+	text-shadow: 1px 1px 1px #735700;
+	float: right;
+	width: 370px;
+	margin: 20px 40px 0 0;
+	clear: right;
+}
+
+*+html #hero h1,
+*+html #hero h2, 
+*+html #hero p {
+	filter: dropshadow(color=#735700,offX=1,offY=1);
+}
+
+#hero h2 {
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 1.4;
+	margin-bottom: 20px;
+}
+
+#latestNews {
+	float: left;
+	display: inline;
+	width: 596px;
+	margin: 15px 20px 0 20px;
+}
+
+#latestNews h2 {
+	border-bottom: 1px solid #d0d0d0;
+}
+
+#latestNews h2 span {
+	font: bold 24px/1.1 Tahoma, Arial, sans-serif;
+	float: left;
+	display: inline;
+	background-color: #fff;
+	margin-bottom: -4px;
+	padding: 0 10px 0 0;
+	position: relative;
+	z-index: 10;
+}
+
+#latestNews h2 a {
+	float: right;
+	display: inline;
+	font: bold 10px Arial, sans-serif;
+	color: #f89400;
+	text-transform: uppercase;
+	text-decoration: none;
+	margin-top: 8px;
+}
+
+#latestNews h2 a:before {
+	content: "\00BB";
+	padding-right: 4px;
+}
+
+#latestNews .newsList li {
+	margin: 0;
+	list-style: none;
+	float: left;
+	width: 278px;
+	margin-right: 40px;
+}
+
+#latestNews .newsList li:nth-child(even) {
+	margin: 0;
+}
+
+#latestNews .newsList h2 {
+	border: 0;
+}
+
+.newsList li .more {
+	display: block;
+	font: bold 10px Arial, sans-serif;
+	color: #bb7a29;
+	text-transform: uppercase;
+	text-decoration: none;
+	margin-top: 22px;
+}
+
+.newsList li .more:before {
+	content: "\00BB";
+	padding-right: 4px;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+#latestNews .newsList h2 a {
+	font-family: Tahoma, Arial, sans-serif;
+	font-weight:bold;
+	color: #d71635;
+	font-size: 16px;
+	text-transform: none;
+	float:none;
+}
+
+#latestNews .newsList h2 a:before {
+	content: "";
+	padding: 0;
+}
+
+.newsList li {
+	margin: 0;
+	list-style: none;
+}
+
+.newsList h2 a {
+	font-family: Tahoma, Arial, sans-serif;
+	font-weight:bold;
+	color: #d71635;
+	font-size: 16px;
+	text-decoration: none;
+	float:none;
+}
+
+.searchResults div div:nth-child(2) {
+	width: 100% !important;
+}
+
+.vcard {
+	float: left;
+	width: 33%;
+	border-bottom: 1px solid #d0d0d0;
+	margin-bottom: 1em;
+	padding-bottom: 20px;
+}
+
+.vcard h3 {
+	font-size: 14px;
+}
+
+.vcard h3 strong {
+	font-weight: normal;
+	display: block;
+	color: #D71635;
+	font-size: 16px;
+}
+
+.vcard .adr {
+	margin-bottom: .5em;
+}
+
+.vcard .adr p {
+	margin-bottom: 0;
+}
+
+.vcard .type {
+	color: #D71635;
+	font-size: 12px;
+	text-transform: uppercase;
+	padding-right: 5px;
+	font-weight: bold;
+}
+
+.team {
+	clear: both;
+	overflow: hidden;
+	border-bottom: 1px solid #d0d0d0;
+	padding-bottom:20px;
+}
+
+.team div {
+	float: left;
+	width: 25%;
+}
+
+dt {
+	font-weight: bold;
+	margin-top: .5em;
+}
+
+table.narrow {
+	width: 400px;
+}
+
+th,td {
+	padding: 4px;
+}
+
+thead th {
+	border-bottom: 1px solid #d0d0d0;
+}
+
+
+/* override so that content editor can have a plain white table without the alternate row colour */
+#tableWhite tr, #tableWhite td {
+    background: #fff;
+}
+
+
+/* removed on client request, case 24907 - this was undone see case for details */
+tr:nth-child(odd) td {
+	background: #fefaea;
+}
+
+
+th {
+	text-align: left;
+	font-size: 11px;
+	text-transform: uppercase;
+	vertical-align: bottom;
+}
+
+.formData,
+.FormPanel table {
+    color: #333;
+    font-weight: normal;
+    list-style: none;
+    /*margin: 10px 0 15px;*/
+    padding: 0;
+    text-align: left;
+    width: 100%;
+}
+
+.FormPanel table td {
+    background: none;
+    padding: 0 0 10px 0;
+}
+
+.formData li {
+    display: block;
+    margin: 0;
+    padding: 6px 0;
+    width: 100%;
+}
+
+.formData li.required label:after,
+.FormPanel table td span.required {
+    color: #C6002C;
+    float: left;
+    padding-left: 5px;
+    /*content: "*";*/
+}
+
+.formData label {
+    float: left;
+    margin-right: 20px;
+    margin-top: 3px;
+    padding: 0 0 10px;
+    text-align: left;
+    width: 140px;
+}
+
+.FormPanel table tr td:first-child {
+    width: 150px;
+}
+
+.FormPanel table td label {
+    float: left;
+    padding: 0;
+}
+
+.formData input,
+.formData textarea,
+.formData select,
+.FormPanel table td input,
+.FormPanel table td textarea,
+.FormPanel table td select {
+    border: 1px solid #D8D8D8;
+    color: #000;
+    font: normal 14px/1.42 Arial, sans-serif;
+    padding: 4px;
+    width: 300px;
+}
+
+.FormPanel table td input[type="radio"] {
+    border: 0;
+    float: left;
+    width: auto;
+}
+
+.FormPanel table td input[type="radio"] + label {
+    padding-left: 10px;
+}
+
+.FormPanel table td .EditingFormControlNestedControl + br {
+    display: none;
+}
+
+input[type="submit"].FormButton {
+    /*background-color: #BCD881;
+    background-image: -moz-linear-gradient(center top , #BCD881, #87A93E);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #BCD881), color-stop(0.66, #87A93E));
+    border: 1px solid #87A93E;
+    border-radius: 3px;
+    color: #000 !important;
+    font-weight: normal;
+    padding: 2px 9px;
+    text-shadow: none;
+    text-transform: uppercase;*/
+    margin-left: 155px;
+}
+
+.ErrorLabel,
+.EditingFormErrorLabel {
+    color: #C6002C;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 0 15px;
+}
+
+/* ------------------------------------------------------
+OVERRIDES
+@section overrides
+--------------------------------------------------------- */
+
+/* ------------------------------------------------------
+PRINT
+@section print
+--------------------------------------------------------- */
+/* 
+inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/ 
+*/
+@media print {
+	#navMain,
+	#cmsNavFooter,
+	#sideNav {
+		display: none !important;
+	}
+	
+	#content,
+	[role="main"],
+	.wrap,
+	.team div,
+	.vcard {
+		width: 100% !important;
+		height: auto !important;
+		margin: 0 !important;
+		float: none !important;
+		overflow: visible !important;
+		display: block !important;
+	}
+	
+	#hero {
+		background: none !important;
+	}
+	
+#hero p a {color: #fff; padding-left: 15px; !important }
+
+	* { background: transparent !important; color: #444 !important; text-shadow: none; } 
+
+	a, a:visited { color: #444 !important; text-decoration: underline; }
+
+	a:after { content: " (" attr(href) ")"; } 
+
+	abbr:after { content: " (" attr(title) ")"; }
+
+	.ir a:after { content: ""; }  /* Don't show links for images */
+
+	pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+
+	img { page-break-inside: avoid; }
+
+	@page { margin: 0.5cm; }
+
+}
+
+/* ------------------------------------------------------
+NOT FOR PRODUCTION
+@section dev
+--------------------------------------------------------- */
+#buildInfo {
+	position: absolute;
+	top: -30px;
+    margin: auto;
+	height: 35px;
+
+	font-size: 11px;
+	line-height: 38px;
+	text-align: center;
+	text-transform: uppercase;
+	cursor: default;
+    background: #00acec;
+	color: #f0f0f0;
+	z-index: 998;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+}
+    
+#buildInfo:hover {
+    top: -5px;
+}
+        
+#buildInfo small {
+    font-size: 10px;
+}
+
+
+.newsList a.more {
+    padding-bottom: 10px;
+}
+
+.newsList h2 {
+    margin: 10px 0px;    
+}
+
+.newsDetailsDate {
+    padding-bottom : 10px;
+}
+
+
+/* ------------------------------------------------------
+Brand footer links
+--------------------------------------------------------- */
+
+#lnkContractlogistics,
+#lnkRoadStar,
+#lnkCourierPosr,
+#lnkPace {
+    background: Url(../../Global/images/footer-brand-logo.png) no-repeat;
+    height: 18px;
+    text-indent: -999em;
+    float: right;
+    display: block;
+}
+
+#lnkContractlogistics {width: 144px; background-position: -352px -1px;}
+#lnkContractlogistics.current,
+#lnkContractlogistics:hover {background-position: -352px -22px;}
+
+#lnkRoadStar {width: 91px; background-position: -230px -1px;}
+#lnkRoadStar.current,
+#lnkRoadStar:hover {background-position: -230px -22px;}
+
+#lnkCourierPosr {width: 102px; background-position: -94px -1px;}
+#lnkCourierPosr.current,
+#lnkCourierPosr:hover {background-position: -94px -22px;}
+
+#lnkPace {width: 56px; background-position: -5px -1px;}
+#lnkPace.current,
+#lnkPace:hover {background-position: -5px -22px;}
+
+
+/* ------------------------------------------------------
+GLOBAL TEMPLATE REVIEW - NOT USED IN PRODUCTION
+@section global template review
+--------------------------------------------------------- */
+
+#sideNavGT {
+	float: left;
+	display: inline;
+	width: 220px;
+	position: relative;
+	overflow: hidden;
+}
+
+#sideNavGT ul {
+	margin-bottom: 0;
+}
+
+#sideNavGT li {
+	margin: 0;
+	padding: 5px 0 5px 20px;
+	margin-bottom: 1px;
+	position: relative;
+	float: left;
+	width: 183px;
+}
+
+#sideNavGT a {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+#sideNavGT .navCMSListMenuLinkHighlighted {
+	font: bold 14px Tahoma, sans-serif;
+}
+
+#sideNavGT li:last-child {
+	margin-bottom: 0;
+}
+
+#sideNavGT .navCMSListMenuUL a:hover
+{
+    color: Red;
+}
+
+#sideNavGT .navCMSListMenuUL .navCMSListMenuUL a:hover
+{
+    color: Green;
+}
+
+#contentGT {
+	float: left;
+	display: inline;
+	width: 500px;
+	overflow: hidden;
+}
+
+#sideNavRightGT {
+	float: left;
+	display: inline;
+	width: 200px;
+	position: relative;
+	overflow: hidden;
+}
+
+#navMainGT, #navMainGT ul { /* all lists */
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	line-height: 1;
+}
+ 
+#navMainGT a {
+	display: block;
+	width: 6em;
+	padding: 5px;
+}
+
+#navMainGT a:hover {
+	background: blue;
+	color: White;
+}
+ 
+#navMainGT li { /* all list items */
+	float: left;
+	width: 6em; /* width needed or else Opera goes nuts */	
+}
+ 
+#navMainGT li ul { /* second-level lists */
+	position: absolute;
+	background: orange;
+	width: 15em;
+    display:block; 
+	left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+}
+
+#navMainGT li ul a { /* second-level links */
+
+	width: 12em;
+}
+
+#navMainGT li ul a:hover { /* second-level links */
+
+	background: red;
+}
+ 
+#navMainGT li:hover ul, #navMainGT li.sfhover ul { /* lists nested under hovered list items */
+	left: auto;
+	display:block; 
+}
+
+
+/*
+@section Forms
+*/
+.site-form {
+    font-family: Tahoma, Arial, sans-serif;
+    margin-bottom: 30px;
+    }
+    
+.site-form tbody {border-top: 1px solid #bdbdbd}
+
+.site-form td { padding: 20px;}
+
+.site-form tr:nth-child(2n+1) td {background: #f4f3ed;}
+
+.site-form tr td:nth-child(2n+1) {
+    border-right: 1px solid #ddd;
+    width: 215px;
+}
+
+.site-form tr td {
+    width: 400px;
+    border-bottom: 1px solid #bdbdbd;
+}
+
+.site-form table {
+    *border-bottom: 1px solid #bdbdbd; /*IE7 and below */ 
+    *border-top: 1px solid #bdbdbd; /*IE7 and below */ 
+}
+
+.site-form input[type=text],
+.site-form select,
+.site-form textarea {
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 250px;
+    float: left;
+    overflow: hidden;
+    margin-right: 150px;
+}
+
+.site-form input[type="checkbox"] {
+    float: left;
+    overflow: hidden;
+}
+
+.RadioButtonList tr,
+.RadioButtonList tr td,
+.RadioButtonList tbody {
+    padding: 0;
+    border: 0 none !important;
+    background-color: #fff !important;
+}
+
+.RadioButtonList tr td {padding-bottom: 10px;}
+
+.site-form .FormButton {margin: 10px 0 0 250px;}
+
+.site-form a,
+.site-form .EditingFormErrorLabel,
+.site-form .ErrorLabel {color: #D71635;}
+
+.site-form .EditingFormErrorLabel,
+.site-form .ErrorLabel {padding: 15px 0;}
