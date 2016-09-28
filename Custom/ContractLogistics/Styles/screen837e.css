@@ -71,6 +71,14 @@ HELPER STYLES
     width: 202px;
 }
 
+nav{
+    background-color: #000;
+}
+
+header {
+    background-color: #FFCA26 !important;
+}
+
 .loginForm input[type=password] 
 {
     position: absolute;
@@ -176,7 +184,7 @@ COMPONENTS
 @section components
 --------------------------------------------------------- */
 body {
-    background: #FEFAEA url(../images/bg1.gif) repeat-x;
+    /*background: #FEFAEA url(../images/bg1.gif) repeat-x;*/
 }
 
 #hero {
